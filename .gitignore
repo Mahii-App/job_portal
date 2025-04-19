@@ -1,0 +1,7 @@
+.env 
+nodemod_modules
+.DS_Store
+package-lock.json
+logs
+public/resume
+public/uploads
