@@ -15,6 +15,7 @@ import superAdminJobRoutes from './modules/superadmin/routes/job.routes';
 import superAdminAnalyticsRoutes from './modules/superadmin/routes/analytic.routes';
 import superAdminReportRoutes from './modules/superadmin/routes/report.routes';
 import { errorHandler } from './middleware/errorHandler';
+import superAdminAuthRoutes from './modules/superadmin/routes/admin.routes'; // or rename the file for clarity
 
 const app: Application = express();
 
@@ -37,6 +38,7 @@ app.use('/api/superadmin/admins', superAdminAdminRoutes);
 app.use('/api/superadmin/jobs', superAdminJobRoutes);
 app.use('/api/superadmin/analytics', superAdminAnalyticsRoutes);
 app.use('/api/superadmin/reports', superAdminReportRoutes);
+app.use('/api/superadmin/auth', superAdminAuthRoutes);
 
 // Swagger Documentation
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));

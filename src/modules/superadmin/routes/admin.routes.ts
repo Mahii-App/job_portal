@@ -9,7 +9,7 @@ const router = Router();
 
 router.get('/', superAdminAuth, listAdmins);
 router.delete('/:adminId', superAdminAuth, validate(deleteUserSchema), deleteAdmin);
-router.post('/signup', superAdminAuth, validate(signupSchema), signup);
+router.post('/signup', validate(signupSchema), signup);
 router.post('/login', validate(loginSchema), login);
 
 export default router;
