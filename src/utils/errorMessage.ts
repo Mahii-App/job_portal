@@ -1,3 +1,4 @@
+
 export const ErrorMessages = {
 	// Authentication Errors
 	INVALID_CREDENTIALS: 'Invalid credentials',
@@ -30,6 +31,7 @@ export const ErrorMessages = {
 	END_DATE_REQUIRED: 'End date is required',
 	INVALID_DATE_RANGE: 'End date must be after start date',
 	INTERVIEW_SCHEDULED: 'Interview scheduled successfully',
+  
 	// Resource Errors
 	USER_NOT_FOUND: 'User not found',
 	ADMIN_NOT_FOUND: 'Admin not found',
@@ -37,11 +39,12 @@ export const ErrorMessages = {
 	RESUME_NOT_FOUND: 'Resume not found',
 	APPLICATION_NOT_FOUND: 'Application not found',
 	USER_ALREADY_EXISTS: 'User already exists',
-	ADMIN_ALREADY_EXISTS: 'Admin already exists', // Added
-	JOB_CREATED: 'Job created successfully', // Added
-	ADMIN_DELETED: 'Admin deleted successfully', // Added
-	JOB_DELETED: 'Job deleted successfully', // Added
-	USER_DELETED: 'User deleted successfully', // Added
+	ADMIN_ALREADY_EXISTS: 'Admin already exists',
+	JOB_CREATED: 'Job created successfully',
+	ADMIN_DELETED: 'Admin deleted successfully',
+	JOB_DELETED: 'Job deleted successfully',
+	USER_DELETED: 'User deleted successfully',
+	QUEUE_CONSUME_ERROR: "Error consuming from queue",
   
 	// Service Errors
 	MONGO_CONNECTION_FAILED: 'Failed to connect to MongoDB',
@@ -65,4 +68,6 @@ export const ErrorMessages = {
 	FORBIDDEN: 'Forbidden action',
 	SERVER_ERROR: 'SERVER ERROR',
 	APPLICATION_SUBMITTED: 'application submitted'
+	
   } as const;
+  

@@ -1,21 +1,22 @@
+
 import express, { Application } from 'express';
 import swaggerUi from 'swagger-ui-express';
-//import { swaggerSpec } from './config/swagger';
 import swaggerSpec from './config/swagger';
-// import { setupSwagger } from './config/swagger';
-import userAuthRoutes from './modules/user/routes/auth.routes';
-import userJobRoutes from './modules/user/routes/job.routes';
-import userResumeRoutes from './modules/user/routes/resume.routes';
-import adminAuthRoutes from './modules/admin/routes/auth.routes';
-import adminJobRoutes from './modules/admin/routes/job.routes';
-import adminInterviewRoutes from './modules/admin/routes/interview.routes';
-import superAdminUserRoutes from './modules/superadmin/routes/user.routes';
-import superAdminAdminRoutes from './modules/superadmin/routes/admin.routes';
-import superAdminJobRoutes from './modules/superadmin/routes/job.routes';
-import superAdminAnalyticsRoutes from './modules/superadmin/routes/analytic.routes';
-import superAdminReportRoutes from './modules/superadmin/routes/report.routes';
+import userAuthRoutes from '/home/user/job_PORTAL/src/routes/user.auth.routes';
+import userJobRoutes from '/home/user/job_PORTAL/src/routes/user.job.routes';
+import userResumeRoutes from '/home/user/job_PORTAL/src/routes/user.resume.routes';
+import adminAuthRoutes from '/home/user/job_PORTAL/src/routes/admin.auth.routes';
+import adminJobRoutes from '/home/user/job_PORTAL/src/routes/admin.job.routes';
+import adminInterviewRoutes from '/home/user/job_PORTAL/src/routes/admin.interview.routes';
+import superAdminUserRoutes from '/home/user/job_PORTAL/src/routes/user.routes';
+import superAdminAdminRoutes from './routes/superadmin.routes';
+import superAdminJobRoutes from '/home/user/job_PORTAL/src/routes/superadmin.job.routes';
+import superAdminAnalyticsRoutes from '/home/user/job_PORTAL/src/routes/superadmin.report.routes';
+import superAdminReportRoutes from '/home/user/job_PORTAL/src/routes/superadmin.report.routes';
+import superAdminAuthRoutes from './routes/superadmin.routes';
+import emailRoutes from '/home/user/job_PORTAL/src/routes/email.routes';
+import notificationRoutes from './routes/notification.routes'; 
 import { errorHandler } from './middleware/errorHandler';
-import superAdminAuthRoutes from './modules/superadmin/routes/admin.routes'; // or rename the file for clarity
 
 const app: Application = express();
 
@@ -25,8 +26,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/public', express.static('public'));
 
 // Routes
-// app.use('/api/user/auth', userAuthRoutes);
-
 app.use('/api/user/auth', userAuthRoutes);
 app.use('/api/user/jobs', userJobRoutes);
 app.use('/api/user/resume', userResumeRoutes);
@@ -39,8 +38,10 @@ app.use('/api/superadmin/jobs', superAdminJobRoutes);
 app.use('/api/superadmin/analytics', superAdminAnalyticsRoutes);
 app.use('/api/superadmin/reports', superAdminReportRoutes);
 app.use('/api/superadmin/auth', superAdminAuthRoutes);
+app.use('/api/emails', emailRoutes); 
+app.use('/api/notifications', notificationRoutes); 
 
-// Swagger Documentation
+//swagger 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // Error Handler

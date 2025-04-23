@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import Joi from 'joi';
 import { HTTP_CODES } from '../utils/httpCodes';
-// import { ErrorMessages } from '../utils/errorMessage';
+
 
 export const validate = (schema: Joi.ObjectSchema) => {
   return (req: Request, res: Response, next: NextFunction): void => {

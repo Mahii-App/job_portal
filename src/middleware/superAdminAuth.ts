@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 import { HTTP_CODES } from '../utils/httpCodes';
 import { ErrorMessages } from '../utils/errorMessage';
-import SuperAdmin, { ISuperAdmin } from '../modules/superadmin/models/superAdmin';
+import SuperAdmin, { ISuperAdmin } from '../models/superAdmin';
 import { JwtPayload } from '../types';
 
 export const superAdminAuth = async (req: Request, res: Response, next: NextFunction): Promise<void> => {

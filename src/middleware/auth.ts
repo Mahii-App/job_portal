@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 import { HTTP_CODES } from '../utils/httpCodes';
 import { ErrorMessages } from '../utils/errorMessage';
-import {User ,IUser } from '../modules/user/models/user';
+import {User ,IUser } from '../models/user';
 import { JwtPayload } from '../types';
 
 export const authMiddleware = async (req: Request, res: Response, next: NextFunction): Promise<void> => {

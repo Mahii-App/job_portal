@@ -11,12 +11,12 @@ const PORT = process.env.PORT || 3000;
 const startServer = async (): Promise<void> => {
   try {
     await connectDB();
-    // logger.info('Connected to MongoDB');
+    
   
     await connectRabbitMQ();
-    // logger.info('Connected to RabbitmQ');
+   
     await connectRedis();
-    // logger.info('Connected to Redis');
+   
 
     setupSwagger(app as Express);
 

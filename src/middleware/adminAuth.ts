@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 import { HTTP_CODES } from '../utils/httpCodes';
 import { ErrorMessages } from '../utils/errorMessage';
-import Admin, { IAdmin } from '../modules/admin/models/Admin';
+import Admin, { IAdmin } from '../models/Admin';
 import { JwtPayload } from '../types';
 
 export const adminAuth = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
