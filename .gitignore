@@ -4,4 +4,4 @@ package-lock.json
 logs
 public/resumes
 
-node_modules
+node_modules/
